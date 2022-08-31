@@ -2,48 +2,64 @@
 <html lang="ja">
 
 <head>
-	<meta charset="UTF-8">
-	<title>実行結果</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <header>
-	<center>
-		<h1>JavaScriptとHTMLで簡単なログインフォームを作る</h1>
-	</center>
+    <center>
+        <h1>Login</h1>
+    </center>
 </header>
 <style>
-	header {
-		position: fixed;
-		color: white;
-		width: 100%;
-		height: 70px;
-		background-color: #8dc21f;
-	}
+    header {
+        position: fixed;
+        color: white;
+        width: 100%;
+        height: 70px;
+        background-color: #8dc21f;
+    }
 </style>
 
 <br>
 <br>
 <br>
 
-<center>
-	<h2>成功</h2>
-</center>
+<body>
+    <div>
+        <!--フォーム-->
+        <form name="login_form">
+            <center>
+                <h1 class="contact-title">ログイン</h1>
+                <p>ID, Password入力して, 「認証」ボタンをクリックしてください.</p>
+            </center>
+            <div>
 
-<center>
+                <center>
+                    <div>
+                        <input type="id" name="id" placeholder="ID">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="password" name="pass" placeholder="Password" onchange="nextPage()">
+                    </div>
+                </center>
 
-	<h3>Loginが完了しました</h3>
-	<br>
-	<p>
-		<b>
-			
-			<br>
-			
-		</b>
-	</p>
+            </div>
+            <button type="button" onClick="nextPage();">認証</button>
+        </form>
 
-</center>
+        <!--ログイン処理-->
+        <script language="JavaScript" type="text/javascript">
+            function nextPage() {
+                id = document.login_form.id.value
+                pwd = document.login_form.pass.value;
+                location.href = id + pwd + ".html";
+            }
+        </script>
 
+    </div>
 </body>
 
 </html>
